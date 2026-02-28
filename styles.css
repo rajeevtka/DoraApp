@@ -1,0 +1,172 @@
+:root {
+  color-scheme: light;
+  --bg: #f6f8ff;
+  --card: #ffffff;
+  --text: #1f2a44;
+  --muted: #60708d;
+  --primary: #2f6bff;
+  --accent: #0f9d77;
+  --danger: #da3f5c;
+  --border: #e3e8f5;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.hero {
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #132a72, #2f6bff);
+  color: #fff;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero h1 {
+  margin: 0.2rem 0;
+}
+
+.tag {
+  margin: 0;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.8;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 8px 24px rgba(26, 39, 77, 0.06);
+}
+
+h2,
+h3 {
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.92rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.65rem 0.7rem;
+  border-radius: 10px;
+  border: 1px solid #ccd7f3;
+  font-size: 0.95rem;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(47, 107, 255, 0.15);
+}
+
+.btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #fff;
+  color: #132a72;
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: #fff;
+}
+
+.location-box,
+.status-panel {
+  background: #f2f5ff;
+  border-radius: 10px;
+  padding: 0.65rem;
+  color: #2f406a;
+  border: 1px solid #d9e2ff;
+}
+
+.personnel-list,
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.personnel-list li,
+#historyList li {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.65rem;
+  background: #fafcff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  background: #e5ecff;
+  color: #2346b8;
+}
+
+.badge.emergency {
+  background: #ffe6eb;
+  color: var(--danger);
+}
+
+.timeline {
+  margin: 0 1rem 1rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 840px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    align-items: start;
+  }
+}

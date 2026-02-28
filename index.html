@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dora Health Connect</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="tag">Mobile Emergency Care</p>
+        <h1>Dora Health Connect</h1>
+        <p>
+          Connect patients to health personnel, book doorstep care, or dispatch an ambulance to your home in emergencies.
+        </p>
+      </div>
+      <button id="locateBtn" class="btn btn-primary">Use My Location</button>
+    </header>
+
+    <main class="layout">
+      <section class="card">
+        <h2>Request Medical Help</h2>
+        <form id="requestForm">
+          <label>
+            Full Name
+            <input required name="patientName" type="text" placeholder="Jane Doe" />
+          </label>
+
+          <label>
+            Phone Number
+            <input required name="phone" type="tel" placeholder="+234..." />
+          </label>
+
+          <label>
+            Service Type
+            <select name="serviceType" required>
+              <option value="doorstep">Doorstep Medical Visit</option>
+              <option value="telemedicine">Telemedicine Call</option>
+              <option value="ambulance">Emergency Ambulance</option>
+            </select>
+          </label>
+
+          <label>
+            Main Complaint
+            <textarea required name="complaint" rows="3" placeholder="Describe symptoms or emergency"></textarea>
+          </label>
+
+          <label>
+            Existing Medical Conditions
+            <textarea name="history" rows="3" placeholder="e.g. asthma, diabetes, hypertension"></textarea>
+          </label>
+
+          <label>
+            Allergies / Current Medication
+            <textarea name="medication" rows="2" placeholder="Penicillin allergy, insulin"></textarea>
+          </label>
+
+          <label>
+            Home Address
+            <input required name="address" type="text" placeholder="12 Palm Street, City" />
+          </label>
+
+          <div class="location-box" id="locationStatus">
+            <strong>Location:</strong> Not captured yet.
+          </div>
+
+          <button type="submit" class="btn btn-accent">Submit Request</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Available Nearby Personnel</h2>
+        <ul id="personnelList" class="personnel-list"></ul>
+
+        <div class="status-panel" id="servicePanel">
+          <h3>Service Status</h3>
+          <p>No request submitted yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <section class="card timeline" id="requestTimeline">
+      <h2>Recent Requests</h2>
+      <p class="muted">Requests are saved locally on this device for demo purposes.</p>
+      <ul id="historyList"></ul>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
